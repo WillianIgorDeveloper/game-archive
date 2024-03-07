@@ -8,6 +8,12 @@ export function SearchBar() {
   const { refetch } = useLoadGames();
 
   const handleSearch = useDebouncedCallback(async (term: string) => {
+    if (term === "") {
+      setSearchParams({});
+      await new Promise((resolve) => setTimeout(resolve, 10));
+      refetch();
+      return;
+    }
     setSearchParams({ search: term });
     await new Promise((resolve) => setTimeout(resolve, 10));
     refetch();
