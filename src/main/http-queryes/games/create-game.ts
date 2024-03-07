@@ -3,29 +3,29 @@ import { postGame } from "@/main/requests/games/post-game";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export function useCreateGame() {
-  const queryClient = useQueryClient();
+	const queryClient = useQueryClient();
 
-  return useMutation({
-    mutationFn: postGame,
-    onSuccess: (_, newGame) => {
-      queryClient.setQueryData(["games"], (currentGames: Game[]) => {
-        if (currentGames) {
-          return [
-            ...currentGames,
-            {
-              id: crypto.randomUUID(),
-              ...newGame,
-            },
-          ];
-        } else {
-          return [
-            {
-              id: crypto.randomUUID(),
-              ...newGame,
-            },
-          ];
-        }
-      });
-    },
-  });
+	return useMutation({
+		mutationFn: postGame,
+		onSuccess: (_, newGame) => {
+			queryClient.setQueryData(["games"], (currentGames: Game[]) => {
+				if (currentGames) {
+					return [
+						...currentGames,
+						{
+							id: crypto.randomUUID(),
+							...newGame,
+						},
+					];
+				}
+
+				return [
+					{
+						id: crypto.randomUUID(),
+						...newGame,
+					},
+				];
+			});
+		},
+	});
 }

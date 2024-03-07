@@ -1,9 +1,9 @@
 export type Game = {
-  id: string;
-  name: string;
-  createdat: Date;
+	id: string;
+	name: string;
+	createdat: Date;
 };
 
 export type newGame = {
-  name: string;
+	name: string;
 };
