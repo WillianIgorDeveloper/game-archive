@@ -1,5 +1,5 @@
-import { ROUTES } from "@/utils";
 import { Link } from "react-router-dom";
+import { ROUTES } from "@/utils/routes";
 import { LogoutBtn } from "@/presentation/components/ui/logout-btn";
 import { GamesTable } from "./components/games-table";
 

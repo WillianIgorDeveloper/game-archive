@@ -20,7 +20,7 @@ export function HomePage() {
               </h2>
               <div className="space-x-3 pt-1">
                 <Link to={ROUTES.APP}>
-                  <Button variant="brand">Get Started</Button>
+                  <Button>Get Started</Button>
                 </Link>
                 <Link to={ROUTES.SIGNUP}>
                   <Button variant="outline" className="gap-2">

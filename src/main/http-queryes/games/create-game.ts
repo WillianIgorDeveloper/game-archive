@@ -1,4 +1,4 @@
-import { Game } from "@/@types/game";
+import { Game } from "@/types/game";
 import { postGame } from "@/main/requests/games/post-game";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
@@ -10,9 +10,20 @@ export function useCreateGame() {
     onSuccess: (_, newGame) => {
       queryClient.setQueryData(["games"], (currentGames: Game[]) => {
         if (currentGames) {
-          return [...currentGames, newGame];
+          return [
+            ...currentGames,
+            {
+              id: crypto.randomUUID(),
+              ...newGame,
+            },
+          ];
         } else {
-          return [newGame];
+          return [
+            {
+              id: crypto.randomUUID(),
+              ...newGame,
+            },
+          ];
         }
       });
     },

@@ -1,4 +1,4 @@
-import { ROUTES } from "@/utils";
+import { ROUTES } from "@/utils/routes";
 import { Button } from "./button";
 import { useNavigate } from "react-router-dom";
 

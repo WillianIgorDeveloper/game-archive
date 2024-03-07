@@ -15,7 +15,7 @@ import { Input } from "@/presentation/components/ui/input";
 import { Button } from "@/presentation/components/ui/button";
 import { signin } from "@/main/requests/auth/signin";
 import { useToast } from "@/presentation/components/ui/use-toast";
-import { ROUTES } from "@/utils";
+import { ROUTES } from "@/utils/routes";
 import { Link, useNavigate } from "react-router-dom";
 import { Loader } from "@/presentation/components/ui/loader";
 
@@ -145,7 +145,7 @@ export function SignInForm() {
                 )}
               />
 
-              <Button type="submit" variant="brand" className="w-full">
+              <Button type="submit" className="w-full">
                 Sign in
               </Button>
             </form>

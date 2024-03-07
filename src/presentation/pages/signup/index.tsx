@@ -138,9 +138,7 @@ export function SignUpPage() {
                   )}
                 />
 
-                <Button variant="brand" className="w-full">
-                  Create account
-                </Button>
+                <Button className="w-full">Create account</Button>
               </form>
             </Form>
 

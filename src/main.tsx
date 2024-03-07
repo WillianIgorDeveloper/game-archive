@@ -38,5 +38,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       </BrowserRouter>
     </QueryClientProvider>
     <Toaster />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

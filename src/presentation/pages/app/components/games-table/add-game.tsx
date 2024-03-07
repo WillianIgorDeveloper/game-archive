@@ -1,5 +1,9 @@
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useCreateGame } from "@/main/http-queryes/games/create-game";
 import { Button } from "@/presentation/components/ui/button";
+import { Input } from "@/presentation/components/ui/input";
 import {
   Dialog,
   DialogContent,
@@ -14,10 +18,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/presentation/components/ui/form";
-import { Input } from "@/presentation/components/ui/input";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters long" }),
@@ -39,7 +39,7 @@ export function AddGame() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="brand">Add game</Button>
+        <Button>Add</Button>
       </DialogTrigger>
       <DialogContent>
         <Form {...form}>
@@ -59,9 +59,9 @@ export function AddGame() {
             />
 
             <DialogFooter className="pt-2">
-              <Button type="submit" variant="brand">
-                Add
-              </Button>
+              <DialogTrigger asChild>
+                <Button type="submit">Add</Button>
+              </DialogTrigger>
             </DialogFooter>
           </form>
         </Form>
