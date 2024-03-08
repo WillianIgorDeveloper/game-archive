@@ -57,7 +57,7 @@ export function SignInForm() {
 				return;
 			}
 
-			localStorage.setItem("token", response.body.token);
+			localStorage.setItem(import.meta.env.VITE_TOKEN_NAME, response.body.token);
 			navigate(ROUTES.APP);
 		} catch (error) {
 			toast({
